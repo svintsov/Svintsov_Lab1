@@ -2,6 +2,12 @@ package com.bazyl.credits.sorters;
 
 public class GrowingBubbleSorter implements AbstractSortable {
 
+  /**
+   * Implementation of Bubble sorting algorithm starting from the begin of the array.
+   *
+   * @param array some array to be sorted
+   * @see <a href="https://en.wikipedia.org/wiki/Bubble_sort">Bubble sorting</a>
+   */
   @Override
   public void sortArray(int[] array) {
     for (int i = array.length - 1; i > 0; i--) {
