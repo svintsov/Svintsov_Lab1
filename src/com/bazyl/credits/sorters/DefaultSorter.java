@@ -9,7 +9,7 @@ import java.util.Arrays;
  * @version %I%
  * @since 1.0
  */
-public class DefaultSorter implements AbstractSortable {
+public class DefaultSorter extends AbstractSorter {
 
   /**
    * Sorts an array with default method

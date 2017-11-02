@@ -49,8 +49,9 @@ public class ArrayCreator {
    */
   public static int[] getReversedSortedArray(int length) {
     int[] array = new int[length];
-    for (int i = length - 1; i >= 0; i--) {
-      array[i] = i;
+    int value = length;
+    for (int i = 0; i < length - 1; i++) {
+      array[i] = value--;
     }
     return array;
   }

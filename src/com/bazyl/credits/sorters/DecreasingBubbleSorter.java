@@ -7,7 +7,7 @@ package com.bazyl.credits.sorters;
  * @version %I%
  * @since 1.0
  */
-public class DecreasingBubbleSort implements AbstractSortable {
+public class DecreasingBubbleSorter extends AbstractBubbleSorter {
 
   /**
    * Implementation of Bubble sorting algorithm starting from the end of the array.
@@ -20,9 +20,7 @@ public class DecreasingBubbleSort implements AbstractSortable {
     for (int i = 0; i < array.length; i++) {
       for (int j = array.length - 1; j > i; j--) {
         if (array[j - 1] > array[j]) {
-          int t = array[j];
-          array[j] = array[j - 1];
-          array[j - 1] = t;
+          swap(array, j - 1, j);
         }
       }
     }
