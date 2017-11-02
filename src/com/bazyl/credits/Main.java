@@ -1,8 +1,8 @@
 package com.bazyl.credits;
 
 import com.bazyl.credits.fillers.ArrayCreator;
-import com.bazyl.credits.sorters.AbstractSortable;
-import com.bazyl.credits.sorters.DefaultSorter;
+import com.bazyl.credits.sorters.AbstractSorter;
+import com.bazyl.credits.sorters.DecreasingBubbleSorter;
 import com.bazyl.credits.view.ConsoleOutput;
 
 /**
@@ -20,9 +20,9 @@ public class Main {
    * @param args default params when starting the app
    */
   public static void main(String[] args) {
-    int[] myArray = ArrayCreator.getRandomArray(10);
+    int[] myArray = ArrayCreator.getReversedSortedArray(10);
     ConsoleOutput.showArray(myArray);
-    AbstractSortable sorter = new DefaultSorter();
+    AbstractSorter sorter = new DecreasingBubbleSorter();
     sorter.sortArray(myArray);
     ConsoleOutput.showArray(myArray);
 
