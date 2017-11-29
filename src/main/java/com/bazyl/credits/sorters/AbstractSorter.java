@@ -14,5 +14,5 @@ public abstract class AbstractSorter {
    *
    * @param array that array will be sorted
    */
-  public abstract void sortArray(int[] array);
+  public abstract long sortArray(int[] array);
 }

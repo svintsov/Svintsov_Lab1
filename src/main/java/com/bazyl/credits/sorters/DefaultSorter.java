@@ -21,7 +21,10 @@ public class DefaultSorter extends AbstractSorter {
    * manual</a>
    */
   @Override
-  public void sortArray(int[] array) {
+  public long sortArray(int[] array) {
+    long startTime = System.currentTimeMillis();
     Arrays.sort(array);
+    long endTime = System.currentTimeMillis();
+    return endTime - startTime;
   }
 }

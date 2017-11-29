@@ -15,7 +15,7 @@ public abstract class AbstractBubbleSorter extends AbstractSorter {
    *
    * @param array this array will be sorted
    */
-  public abstract void sortArray(int[] array);
+  public abstract long sortArray(int[] array);
 
   /**
    * Swaps the elements of the array.

@@ -19,7 +19,8 @@ public class DecreasingBubbleSorter extends AbstractBubbleSorter {
    * @see <a href="https://en.wikipedia.org/wiki/Bubble_sort">Bubble sorting</a>
    */
   @Override
-  public void sortArray(int[] array) {
+  public long sortArray(int[] array) {
+    long startTime = System.currentTimeMillis();
     for (int i = 0; i < array.length; i++) {
       for (int j = array.length - 1; j > i; j--) {
         if (array[j - 1] > array[j]) {
@@ -27,5 +28,7 @@ public class DecreasingBubbleSorter extends AbstractBubbleSorter {
         }
       }
     }
+    long endTime = System.currentTimeMillis();
+    return endTime - startTime;
   }
 }

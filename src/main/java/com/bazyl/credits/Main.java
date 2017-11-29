@@ -1,6 +1,9 @@
 package com.bazyl.credits;
 
 import com.bazyl.credits.analyzer.Analyzer;
+import com.bazyl.credits.view.ConsoleOutput;
+import com.bazyl.credits.view.XLSOutput;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * Main entry point class of the application. Consist only one method named main
@@ -17,15 +20,21 @@ public class Main {
    * @param args default params when starting the app
    */
   public static void main(String[] args) {
-    /*int[] myArray = ArrayCreator.getReversedSortedArray(10);
-    ConsoleOutput.showArray(myArray);
-    AbstractSorter sorter = new DecreasingBubbleSorter();
-    sorter.sortArray(myArray);
-    ConsoleOutput.showArray(myArray);*/
 
     Analyzer analyzer = new Analyzer();
-    analyzer.countSortClasses();
-    //System.out.println(analyzer.getClassCounter());
+
+    try {
+      analyzer.gainStatistics();
+    } catch (IllegalAccessException e) {
+      e.printStackTrace();
+    } catch (InvocationTargetException e) {
+      e.printStackTrace();
+    } catch (InstantiationException e) {
+      e.printStackTrace();
+    }
+    ConsoleOutput.showMap(analyzer.getTimeStorage());
+    XLSOutput.writeResults(analyzer.getStatistics());
 
   }
+
 }

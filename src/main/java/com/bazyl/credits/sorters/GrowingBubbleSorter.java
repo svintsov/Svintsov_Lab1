@@ -12,7 +12,8 @@ public class GrowingBubbleSorter extends AbstractBubbleSorter {
    * @see <a href="https://en.wikipedia.org/wiki/Bubble_sort">Bubble sorting</a>
    */
   @Override
-  public final void sortArray(int[] array) {
+  public final long sortArray(int[] array) {
+    long startTime = System.currentTimeMillis();
     for (int i = array.length - 1; i > 0; i--) {
       for (int j = 0; j < i; j++) {
         if (array[j] > array[j + 1]) {
@@ -20,5 +21,7 @@ public class GrowingBubbleSorter extends AbstractBubbleSorter {
         }
       }
     }
+    long endTime = System.currentTimeMillis();
+    return endTime - startTime;
   }
 }
